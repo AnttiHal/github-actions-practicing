@@ -18,12 +18,12 @@ jobs:
     steps:
       - shell: bash
         run: |
-          expr 1 + 1 > output.log
+          expr 3 + 8 > output.txt
       - name: upload outputs file
         uses: actions/upload-artifact@v3
         with:
           name: output-log-file
-          path: output.log
+          path: output.txt
   job_3:
     name: Download artifact
     needs: job_2
@@ -33,3 +33,5 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
           name: output-log-file
+      - name: print to console
+        run: cat output.txt
