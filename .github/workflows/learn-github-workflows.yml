@@ -38,3 +38,19 @@ jobs:
       - name: the job succeeded
         if: ${{ success() }}
         run: echo success
+  job_4:
+    name: Dump contexts 
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump gh context
+        run: echo ${{ toJSON(github) }}
+      - name: dump job context
+        run: echo ${{ toJSON(job) }}
+      - name: dump steps context
+        run: echo ${{ toJSON(steps) }}
+      - name: dump runner context
+        run: echo ${{ toJSON(runner) }}
+      - name: dump matrix context
+        run: echo ${{ toJSON(matrix) }}
+      - name: dump strategy context
+        run: echo ${{ toJSON(strategy) }}      
