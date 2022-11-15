@@ -43,6 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: dump gh context
+        id: gh_context_step
         run: echo ${{ toJSON(github) }}
       - name: dump job context
         run: echo ${{ toJSON(job) }}
