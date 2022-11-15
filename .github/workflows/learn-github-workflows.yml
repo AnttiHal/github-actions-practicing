@@ -12,6 +12,8 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
   artifact-test:
+    name: Save output
+    runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
