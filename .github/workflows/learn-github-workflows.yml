@@ -42,13 +42,16 @@ jobs:
     name: Dump contexts 
     runs-on: ubuntu-latest
     steps:
+      - name: dump gh context
+        id: gh_context_step
+        run: echo '${{ toJSON(github) }}'
       - name: dump job context
-        run: echo ${{ toJSON(job) }}
+        run: echo '${{ toJSON(job) }}'
       - name: dump steps context
-        run: echo ${{ toJSON(steps) }}
+        run: echo '${{ toJSON(steps) }}'
       - name: dump runner context
-        run: echo ${{ toJSON(runner) }}
+        run: echo '${{ toJSON(runner) }}'
       - name: dump matrix context
-        run: echo ${{ toJSON(matrix) }}
+        run: echo '${{ toJSON(matrix) }}'
       - name: dump strategy context
-        run: echo ${{ toJSON(strategy) }}      
+        run: echo ${{ toJSON(strategy) }}'      
