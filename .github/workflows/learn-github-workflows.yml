@@ -31,4 +31,5 @@ jobs:
     steps:
       - name: Download output.log file
         uses: actions/download-artifact@v3
-        with: output-log-file
+        with: 
+          name: output-log-file
