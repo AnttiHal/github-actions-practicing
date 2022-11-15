@@ -35,3 +35,6 @@ jobs:
           name: output-log-file
       - name: print to console
         run: cat output.txt
+      - name: the job succeeded
+        if: ${{ success() }}
+        run: echo success
