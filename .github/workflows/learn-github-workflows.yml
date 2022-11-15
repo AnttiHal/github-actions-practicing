@@ -2,7 +2,8 @@ name: learn-github-workflows
 run-name: ${{ github.actor }} is learning this stuff.
 on: [push]
 jobs:
-  check-bats-version:
+  job_1:
+    name: check bats version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -11,8 +12,8 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-  artifact-test:
-    name: Save output
+  job_2:
+    name: Save output as artifact
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -23,3 +24,11 @@ jobs:
         with:
           name: output-log-file
           path: output.log
+  job_3:
+    name: Download artifact
+    needs: job_2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download output.log file
+        uses: actions/download-artifact@v3
+        with: output-log-file
