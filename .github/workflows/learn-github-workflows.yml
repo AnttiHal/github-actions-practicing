@@ -74,6 +74,6 @@ jobs:
     steps:
       - name: set output
         id: set_output
-        run: echo 'oneword=test_value' >> GITHUB_OUTPUT
+        run: echo 'oneword=test_value' >> $GITHUB_OUTPUT
       - name: read output
         run: echo '${{ steps.set_output.outputs.oneword }}'
