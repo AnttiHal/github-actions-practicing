@@ -44,6 +44,10 @@ jobs:
   job_4:
     name: Dump contexts 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        group: [1,2]
+        subgroup: [3,4]
     steps:
       - name: dump gh context
         id: gh_context_step
