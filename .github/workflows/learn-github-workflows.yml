@@ -48,10 +48,10 @@ jobs:
       - name: dump gh context
         id: gh_context_step
         run: echo '${{ toJSON(github) }}'
-        outputs:
-          output_test: test_value
+        run: echo 'oneword=test_value' >> GITHUB_OUTPUT
       - name: dump job context
         run: echo '${{ toJSON(job) }}'
+        run: echo '${{ steps.gh_context_step.outputs.oneword }}'
       - name: dump steps context
         run: echo '${{ toJSON(steps) }}'
       - name: dump runner context
