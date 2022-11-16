@@ -58,6 +58,8 @@ jobs:
         run: echo '${{ toJSON(matrix) }}'
       - name: dump strategy context
         run: echo '${{ toJSON(strategy) }}'   
+      - name: dump env context
+        run: echo '${{ toJSON(env) }}'
   job_5:
     name: Print env to console
     runs-on: ubuntu-latest
