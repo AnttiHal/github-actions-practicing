@@ -88,6 +88,6 @@ jobs:
       Favorite_cheese: Camembert
     steps:
       - name: print cheese
-        run: echo 'My name is $my_name and my favorite cheese is $Favorite_cheese, $ending'
+        run: echo "My name is $my_name and my favorite cheese is $Favorite_cheese, $ending"
         env:
           ending: TheEnd
