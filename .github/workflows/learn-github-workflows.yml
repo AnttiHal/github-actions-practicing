@@ -57,4 +57,12 @@ jobs:
       - name: dump matrix context
         run: echo '${{ toJSON(matrix) }}'
       - name: dump strategy context
-        run: echo '${{ toJSON(strategy) }}'      
+        run: echo '${{ toJSON(strategy) }}'   
+  job_5:
+    name: Print env to console
+    runs-on: ubuntu-latest
+    steps:
+      - name: print name
+        run: echo 'Hello ${{ env.my_name }}'   
+      - name: print address
+        run: echo 'Address is ${{ env.address }}'
