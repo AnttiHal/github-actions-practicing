@@ -48,6 +48,8 @@ jobs:
       - name: dump gh context
         id: gh_context_step
         run: echo '${{ toJSON(github) }}'
+        outputs:
+          output_test: test_value
       - name: dump job context
         run: echo '${{ toJSON(job) }}'
       - name: dump steps context
