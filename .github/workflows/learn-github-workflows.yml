@@ -84,7 +84,7 @@ jobs:
         run: echo '${{ steps.set_output.outputs.oneword }}'
   job_7:
     name: environment variable testing
-    runs-on: $OS
+    runs-on: ${{ env.OS }}
     env:
       Favorite_cheese: Camembert
     steps:
