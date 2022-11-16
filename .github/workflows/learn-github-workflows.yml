@@ -4,6 +4,7 @@ on: [push]
 env:
   my_name: Antti
   my_address: Salmintie
+  OS: ubuntu-latest
 jobs:
   job_1:
     name: check bats version
@@ -81,3 +82,13 @@ jobs:
         run: echo 'oneword=test_value' >> $GITHUB_OUTPUT
       - name: read output
         run: echo '${{ steps.set_output.outputs.oneword }}'
+  job_7:
+    name: environment variable testing
+    runs-on: $OS
+    env:
+      Favorite_cheese: Camembert
+    steps:
+      - name: print cheese
+        run: echo 'My favorite cheese is $Favorite_cheese, $ending'
+        env:
+          ending: TheEnd
