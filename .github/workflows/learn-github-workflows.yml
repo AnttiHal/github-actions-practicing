@@ -48,10 +48,8 @@ jobs:
       - name: dump gh context
         id: gh_context_step
         run: echo '${{ toJSON(github) }}'
-        run: echo 'oneword=test_value' >> GITHUB_OUTPUT
       - name: dump job context
         run: echo '${{ toJSON(job) }}'
-        run: echo '${{ steps.gh_context_step.outputs.oneword }}'
       - name: dump steps context
         run: echo '${{ toJSON(steps) }}'
       - name: dump runner context
@@ -70,3 +68,12 @@ jobs:
         run: echo 'Hello ${{ env.my_name }}'   
       - name: print address
         run: echo 'Address is ${{ env.address }}'
+  job_6:
+    name: output practice
+    runs-on: ubuntu-latest
+    steps:
+      - name: set output
+        id: set_output
+        run: echo 'oneword=test_value' >> GITHUB_OUTPUT
+      - name: read output
+        run: echo '${{ steps.set_output.outputs.oneword }}'
