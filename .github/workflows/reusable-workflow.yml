@@ -19,6 +19,6 @@ jobs:
       output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - id: step1
-        run: echo "firstword=moi" >> GITHUB_OUTPUT
+        run: echo "firstword=moi" >> $GITHUB_OUTPUT
       - id: step2
-        run: echo "secondword=maalima" >> GITHUB_OUTPUT
+        run: echo "secondword=maalima" >> $GITHUB_OUTPUT
