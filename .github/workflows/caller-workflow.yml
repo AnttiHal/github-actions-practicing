@@ -6,3 +6,8 @@ on:
 jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
+  print-job:
+    name: print outputs from reusable workflow
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.call-reusable-workflow.outputs.firstword }} ${{ needs.call-reusable-workflow.outputs.secondword}}
