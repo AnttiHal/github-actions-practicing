@@ -1,0 +1,15 @@
+name: Reusable workflow (called)
+
+on:
+  workflow_call:
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first step in the reusable workflow
+        uses: actions/checkout@v3
+      - name: print hello
+        run: |
+          echo 'Hello from reusable workflow, step 1'
+
