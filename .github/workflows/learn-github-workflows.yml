@@ -1,6 +1,7 @@
 name: learn-github-workflows
 run-name: ${{ github.actor }} is learning this stuff.
-on: [push]
+on: 
+  workflow_dispatch:
 env:
   my_name: Antti
   my_address: Salmintie
