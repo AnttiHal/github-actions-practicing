@@ -55,7 +55,7 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
-        name: node-app
+        name: build
         path: ./client/build
       
 
@@ -72,10 +72,12 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+    - name: checkout 
+      uses: actions/checkout@v3
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
       with:
-        name: node-app
+        name: build
     - name: run ls
       run: ls
 
