@@ -47,13 +47,15 @@ jobs:
         npm install
         cd client
         npm run build 
-        mv build ..
+        
+      working-directory: ./client
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
         name: node-app
-        path: build
+        path: ./client/build
+      
 
   deploy:
     permissions:
