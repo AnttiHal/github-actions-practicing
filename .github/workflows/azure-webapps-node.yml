@@ -45,7 +45,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        cd client
         npm run build 
         
       working-directory: ./client
